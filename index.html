@@ -310,15 +310,12 @@
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío tradicional del formulario
 
-    // Recoge los datos del formulario
-    var templateParams = {
+    // Usa EmailJS para enviar el correo
+    emailjs.send("service_ynvt8os","template_bb4i0ml",{
       asunto: document.getElementById('asunto').value,
       email: document.getElementById('email').value,
       mensaje: document.getElementById('mensaje').value
-    };
-
-    // Usa EmailJS para enviar el correo
-    emailjs.send('service_ynvt8os', 'template_bb4i0ml', templateParams)
+  });
       .then(function(response) {
          console.log('Correo enviado con éxito', response.status, response.text);
          alert('Correo enviado con éxito');
