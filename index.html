@@ -297,12 +297,10 @@
       crossorigin="anonymous"
     ></script>
 
-
-    <!--configuracion para enviar datos del formulario-->
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript">
    (function(){
-      emailjs.init("service_ynvt8os");
+      emailjs.init("service_ynvt8os"); // Reemplaza "TU_USER_ID" por tu User ID de EmailJS
    })();
 </script>
 
@@ -310,12 +308,14 @@
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío tradicional del formulario
 
-    // Usa EmailJS para enviar el correo
-    emailjs.send("service_ynvt8os","template_bb4i0ml",{
+    // Recoge los datos del formulario
+    var templateParams = {
       asunto: document.getElementById('asunto').value,
       email: document.getElementById('email').value,
       mensaje: document.getElementById('mensaje').value
-  });
+    };
+    // Usa EmailJS para enviar el correo
+    emailjs.send('service_ynvt8os', 'template_bb4i0ml', templateParams)
       .then(function(response) {
          console.log('Correo enviado con éxito', response.status, response.text);
          alert('Correo enviado con éxito');
