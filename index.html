@@ -254,26 +254,29 @@
 
     <!--CONTACTO-->
 
-    <div class="formulario my-5">
-      <h2 class="text-center" id="contacto">Contacto</h2>
-      <div class="formulario-container">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Asunto:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correo Electrónico:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Escriba su consulta aquí</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="formulario-boton">
-          <button type="button" class="btn">Enviar</button>
-        </div>
-      </div>
+<div class="formulario my-5">
+    <h2 class="text-center" id="contacto">Contacto</h2>
+    <div class="formulario-container">
+        <form action="enviar_correo.php" method="post">
+            <div class="mb-3">
+                <label for="asunto" class="form-label">Asunto:</label>
+                <input type="text" class="form-control" id="asunto" name="asunto" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Escriba su consulta aquí:</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+            </div>
+            <div class="formulario-boton">
+                <input type="submit" class="btn" value="Enviar">
+            </div>
+        </form>
     </div>
+</div>
+
 
     <footer>
       <div class="container-footer pt-4 text-center">
