@@ -253,11 +253,10 @@
 
 
     <!--CONTACTO-->
-
 <div class="formulario my-5">
     <h2 class="text-center" id="contacto">Contacto</h2>
     <div class="formulario-container">
-        <form action="enviar_correo.php" method="post">
+        <form id="contact-form">
             <div class="mb-3">
                 <label for="asunto" class="form-label">Asunto:</label>
                 <input type="text" class="form-control" id="asunto" name="asunto" required>
@@ -271,7 +270,7 @@
                 <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
             </div>
             <div class="formulario-boton">
-                <input type="submit" class="btn" value="Enviar">
+                <button type="submit" class="btn">Enviar</button>
             </div>
         </form>
     </div>
