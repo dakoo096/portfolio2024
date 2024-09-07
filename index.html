@@ -252,8 +252,7 @@
     </div>
 
 
-    <!--CONTACTO-->
-<div class="formulario my-5">
+    <!--CONTACTO--><div class="formulario my-5">
     <h2 class="text-center" id="contacto">Contacto</h2>
     <div class="formulario-container">
         <form id="contact-form">
@@ -275,6 +274,7 @@
         </form>
     </div>
 </div>
+
 
 
     <footer>
@@ -302,9 +302,33 @@
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript">
    (function(){
-      emailjs.init("service_ynvt8os");
+      emailjs.init("TU_USER_ID"); // Reemplaza "TU_USER_ID" por tu User ID de EmailJS
    })();
 </script>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío tradicional del formulario
+
+    // Recoge los datos del formulario
+    var templateParams = {
+      asunto: document.getElementById('asunto').value,
+      email: document.getElementById('email').value,
+      mensaje: document.getElementById('mensaje').value
+    };
+
+    // Usa EmailJS para enviar el correo
+    emailjs.send('service_ynvt8os', 'template_ynvt8os', templateParams)
+      .then(function(response) {
+         console.log('Correo enviado con éxito', response.status, response.text);
+         alert('Correo enviado con éxito');
+      }, function(error) {
+         console.log('Error al enviar el correo', error);
+         alert('Error al enviar el correo');
+      });
+  });
+</script>
+
 
   </body>
 </html>
