@@ -99,13 +99,13 @@ SWITCH MODO NOCTURNO
 --------------*/
 
 .portada {
-  background-image: url(/img/fondoportada.png);
+  background-image: url(img/fondoportada.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 30vw;
 }
 body.dark .portada {
-  background-image: url(/img/fondoportadadark.png);
+  background-image: url(img/fondoportadadark.png);
 }
 .container-portada h1 {
   font-size: 4vw;
