@@ -504,13 +504,37 @@ body.dark footer{
     background: #343d5b;
     color: white;
 }
-footer .container-footer p {
+.container-footer p {
   font-size: 1.2vw;
+  margin-bottom: 10px;
 }
+.container-footer .redes{
+  display: flex;
+  justify-content: center;
+}
+
+.container-footer .redes p a{
+  padding: 0 10px;
+}
+
+
+
 
 /*-------------
 MEDIA QUERIES
 ------------*/
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+  /*---------
+  NAVBAR
+  ----------*/
+  .navbar a {
+    font-size: 1.3vw; /* Disminuye el tamaño de la fuente en pantallas grandes */
+  }
+}
+
+
 
 @media (max-width: 988px) {
   /*---------
@@ -539,7 +563,52 @@ ACERCA DE MI
   .mi-stack h2 {
     font-size: 4.5vw;
   }
+  .mi-stack-container-card .card-image img{
+    width: 60px;
+    height: 60px;
+  }
+  
+
+  /*----------------
+  MIS PROYECTOS
+  ---------------*/
+  .mis-proyectos h2 {
+    font-size: 4.5vw;
+  }
+  .mis-proyectos-container-card .card-body p {
+    font-size: 1.2vw;
+    height: 25vw;
+  }
+
+/*------------
+CONTACTO
+------------*/
+
+.formulario h2 {
+  font-size: 4.5vw;
 }
+.formulario .formulario-container form .form-label{
+  font-size: 2vw;
+}
+.formulario .formulario-container form .form-control{
+  font-size: 2vw;
+}
+.formulario .formulario-container form .formulario-boton button{
+  font-size: 2.5vw;
+}
+
+/*--------------
+FOOTER
+--------------*/
+.container-footer p {
+  font-size: 1.8vw;
+}
+.container-footer .redes p a{
+  padding: 0 5px;
+}
+}
+
+
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 600px) {
@@ -567,14 +636,71 @@ ACERCA DE MI
   .mi-stack h2 {
     font-size: 6vw;
   }
+  /*----------------
+  MIS PROYECTOS
+  ---------------*/
+  .mis-proyectos h2 {
+    font-size: 6vw;
+  }
+  /*------------
+CONTACTO
+------------*/
+
+.formulario h2 {
+  font-size: 6vw;
+}
+.formulario .formulario-container form .form-label{
+  font-size: 2.5vw;
+}
+.formulario .formulario-container form .form-control{
+  font-size: 2.5vw;
 }
 
-/* Ajustes para pantallas grandes */
-@media (min-width: 1200px) {
-  /*---------
-  NAVBAR
-  ----------*/
-  .navbar a {
-    font-size: 1.3vw; /* Disminuye el tamaño de la fuente en pantallas grandes */
+}
+
+
+
+@media(max-width: 575px){
+    /*--------------------
+    MI STACK
+--------------------*/
+  .mi-stack-container-card .card-body h5 {
+    font-size: 2.5vw;
   }
+  .mi-stack-container-card .card-image img{
+    width: 100px;
+    height: 100px;
+  }
+  
+  /*----------------
+  MIS PROYECTOS
+  ---------------*/
+  .mis-proyectos-container-card .card-body h5{
+    font-size: 3vw;
+    height: auto;
+  }
+  .mis-proyectos-container-card .card-body p {
+    font-size: 2.4vw;
+    height: auto;
+  }
+  .mis-proyectos-container-card .card-body a {
+    font-size: 2vw;
+  }
+
+  
+/*--------------
+FOOTER
+--------------*/
+.container-footer p {
+  font-size: 2.3vw;
+  margin-bottom: 5px;
+}
+.container-footer .redes p a{
+  padding: 0 5px;
+}
+
+
+.container-footer .redes p a img{
+  width: 20px;
+}
 }
