@@ -5,6 +5,7 @@
 body {
   background-color: #f6f5f2;
   transition: all 0.5s;
+  overflow-x:hidden;
 }
 
 body.dark {
