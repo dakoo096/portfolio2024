@@ -78,3 +78,38 @@ function topFunction() {
     overlayPrev.addEventListener("click", showPrevImage);
     overlayNext.addEventListener("click", showNextImage);
   });
+
+
+  //configuracion de formulario para enviar mail
+
+  emailjs.init("NMgydeVAgi1o6iWWP");
+
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita el envío tradicional del formulario
+
+      // Toma los datos del formulario
+      var templateParams = {
+        asunto: document.getElementById("asunto").value,
+        email: document.getElementById("email").value,
+        mensaje: document.getElementById("mensaje").value,
+      };
+      // Usa EmailJS para enviar el mail
+      emailjs
+        .send("service_ynvt8os", "template_bb4i0ml", templateParams)
+        .then(
+          function (response) {
+            console.log(
+              "Correo enviado con éxito",
+              response.status,
+              response.text
+            );
+            alert("¡Correo enviado con éxito!");
+          },
+          function (error) {
+            console.log("Error al enviar el correo", error);
+            alert("Error al enviar el correo");
+          }
+        );
+    });

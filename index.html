@@ -183,7 +183,7 @@
     <div class="mis-proyectos my-5">
       <h2 class="text-center" id="misproyectos">Mis proyectos</h2>
 
-      <div class="mis-proyectos-container p-3 row mx-auto text-center mt-4">
+      <div class="mis-proyectos-container p-3 row mx-auto text-center mt-4 align-items-center">
         <div class="col-sm-5 mis-proyectos-container-card p-0">
           <div class="card-image">
             <img
@@ -275,6 +275,22 @@
               >Ver sitio web</a
             >
           </div>
+          
+        </div>
+        <div class="col-sm-5 mis-proyectos-container-card p-0">
+          <div class="card-image">
+            <img src="img/blog-personal.jpg" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Proyecto nº 5 : Blog Personal</h5>
+            <p>
+              Este es un proyecto de blog personal desarrollado con Java, Spring Boot, JPA, Spring Security, MySQL, Thymeleaf, y Bootstrap. El objetivo es ofrecer una plataforma donde los usuarios puedan crear, editar y comentar publicaciones, manteniendo la seguridad y la privacidad de las acciones de cada usuario.
+            </p>
+            <a href="https://github.com/dakoo096/mi-blog-personal.git"
+              >Ver repositorio</a
+            >
+          </div>
+          
         </div>
       </div>
     </div>
@@ -334,7 +350,7 @@
           /></a>
         </p>
         <p>
-          <a href="https://www.linkedin.com/in/noelia-cabral-381723140/"
+          <a href="www.linkedin.com/in/noelia-cabral-381723140"
             ><img src="img/linkedinfooter.png" width="30px"
           /></a>
         </p>
@@ -360,39 +376,6 @@
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
 
-    <script type="text/javascript">
-      emailjs.init("NMgydeVAgi1o6iWWP");
-    </script>
-    <script>
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Evita el envío tradicional del formulario
 
-          // Recoge los datos del formulario
-          var templateParams = {
-            asunto: document.getElementById("asunto").value,
-            email: document.getElementById("email").value,
-            mensaje: document.getElementById("mensaje").value,
-          };
-          // Usa EmailJS para enviar el correo
-          emailjs
-            .send("service_ynvt8os", "template_bb4i0ml", templateParams)
-            .then(
-              function (response) {
-                console.log(
-                  "Correo enviado con éxito",
-                  response.status,
-                  response.text
-                );
-                alert("¡Correo enviado con éxito!");
-              },
-              function (error) {
-                console.log("Error al enviar el correo", error);
-                alert("Error al enviar el correo");
-              }
-            );
-        });
-    </script>
   </body>
 </html>
