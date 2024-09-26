@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -375,6 +375,41 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+
+ <script type="text/javascript">
+      emailjs.init("NMgydeVAgi1o6iWWP");
+    </script>
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita el envío tradicional del formulario
+
+          // Recoge los datos del formulario
+          var templateParams = {
+            asunto: document.getElementById("asunto").value,
+            email: document.getElementById("email").value,
+            mensaje: document.getElementById("mensaje").value,
+          };
+          // Usa EmailJS para enviar el correo
+          emailjs
+            .send("service_ynvt8os", "template_bb4i0ml", templateParams)
+            .then(
+              function (response) {
+                console.log(
+                  "Correo enviado con éxito",
+                  response.status,
+                  response.text
+                );
+                alert("¡Correo enviado con éxito!");
+              },
+              function (error) {
+                console.log("Error al enviar el correo", error);
+                alert("Error al enviar el correo");
+              }
+            );
+        });
+    </script>
 
 
   </body>
